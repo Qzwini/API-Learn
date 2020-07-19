@@ -9,7 +9,7 @@ print(r.status_code)
 
 print("\n ")
 
-print("--- json() --- ")
+print("--- json(1) --- ")
 print(r.json())
 result = r.json()
 print(result)
@@ -18,9 +18,14 @@ print(result.get('message'))
 
 print("\n ")
 
-
+print("--- json(2) --- ")
 q= requests.post(url='http://127.0.0.1:5000/', json={'name': "Ali"})
 print(q.status_code)
 print (q.json().get('message'))
+print("\n ")
 
-
+print("--- json(3) --- ")
+coun = 'iq'
+country =  requests.post(url='http://127.0.0.1:5000/weather/{}'.format(coun))
+print(country.status_code)
+print('the temp in {}  - is {}'.format(coun, country.json().get('temp')))

@@ -29,7 +29,19 @@ def home():
     else:
         return jsonify({'message': 'hello from flask API!'})
     
+
+# {'city': 'temp'}
+temperature = {'iq': 23, 'uk': 26, 'us': 24, 'uae': 22}
+@app.route('/weather/<city>', methods=['GET', 'POST'])
+def get_temp(city):
+    temp = temperature.get(city)
+    return jsonify({'temp': temp})
+
+
+
     
+
+
 
 
 
