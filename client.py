@@ -14,6 +14,7 @@ print(r.json())
 result = r.json()
 print(result)
 print(result['message'])
+print(result.get('message'))
 
 print("\n ")
 
