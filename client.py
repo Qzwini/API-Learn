@@ -19,4 +19,8 @@ print(result.get('message'))
 print("\n ")
 
 
+q= requests.post(url='http://127.0.0.1:5000/', json={'name': "Ali"})
+print(q.status_code)
+print (q.json().get('message'))
+
 
